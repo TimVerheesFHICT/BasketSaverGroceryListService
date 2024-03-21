@@ -9,7 +9,7 @@ services:
     ports:
       - "3300:${MYSQL_PORT}"
     networks:
-      - grocerydb-net
+      - bssaver-net
     volumes:
       - groceryvolume:/var/lib/grocery
 
@@ -28,12 +28,12 @@ services:
     depends_on:
       - grocerydb
     networks:
-      - grocerydb-net
+      - bssaver-net
     volumes:
       - .:/bsgroceryservice/
 
 networks:
-  grocerydb-net:
+  bssaver-net:
     driver: bridge
 
 volumes:
